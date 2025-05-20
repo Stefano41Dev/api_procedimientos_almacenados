@@ -21,8 +21,8 @@ public class PedidoServicio implements IPedidoServicio{
     }
 
     @Override
-    public void guardarPedido(int idProducto, int idCliente, int cantidad) {
-
+    public void guardarPedido(Integer idProducto, Integer idCliente, int cantidad) {
+        pedidoRepositorio.generarPedido(idProducto, idCliente, cantidad);
     }
 
     @Override

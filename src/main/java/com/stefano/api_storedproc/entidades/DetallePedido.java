@@ -1,5 +1,6 @@
 package com.stefano.api_storedproc.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class DetallePedido {
 
     @ManyToOne(targetEntity = Pedido.class)
     @JoinColumn(name = "pedido_id")
+    @JsonBackReference
     private Pedido pedido;
 
     @ManyToOne(targetEntity = Producto.class)

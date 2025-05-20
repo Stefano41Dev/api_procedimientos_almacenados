@@ -7,6 +7,6 @@ import java.util.List;
 public interface IPedidoServicio {
     List<Pedido> obtenerPedidos();
     Pedido obtenerPedido(Integer id);
-    void guardarPedido(int idProducto, int idCliente, int cantidad);
+    void guardarPedido(Integer idProducto, Integer idCliente, int cantidad);
     void eliminarPedido(Integer id);
 }

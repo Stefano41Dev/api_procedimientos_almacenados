@@ -1,5 +1,6 @@
 package com.stefano.api_storedproc.entidades;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ public class Pedido {
     private LocalDate fechaPedido;
 
     @OneToMany(mappedBy = "pedido")
+    @JsonManagedReference
     private List<DetallePedido> detallePedido;
 
     @Enumerated(EnumType.STRING)
@@ -36,8 +38,8 @@ public class Pedido {
     )
     private Estado estado;
     public enum Estado {
-        Pendiente,
-        Enviado,
-        Cancelado
+        PENDIENTE,
+        ENVIADO,
+        CANCELADO
     }
 }
